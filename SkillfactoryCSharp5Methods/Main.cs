@@ -15,7 +15,7 @@ class MainClass
         User.Name = Console.ReadLine();
 
 
-        for (int i = 0; i<5; i++ )
+        for (int i = 0; i<User.Dishes.Length; i++ )
         {
             Console.Write("\nВведите ваше любимое блюдо {0}: ", i+1);
             User.Dishes[i] = Console.ReadLine();
