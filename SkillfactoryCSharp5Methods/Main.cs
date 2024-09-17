@@ -3,9 +3,9 @@ using System.Xml.Linq;
 
 class MainClass
 {
-    static string ShowColor(string who)
+    static string ShowColor(string who, int userage)
     {
-        Console.WriteLine("{0}, напишите свой любимый цвет на английском с маленькой буквы", who);
+        Console.WriteLine("{0}, {1} лет\nНапишите свой любимый цвет на английском с маленькой буквы", who, userage);
         var color = Console.ReadLine();
 
         switch (color)
@@ -55,7 +55,7 @@ class MainClass
 
         for (int i = 0; i < favcolors.Length; i++)
         {
-            favcolors[i] = ShowColor(anketa.name);
+            favcolors[i] = ShowColor(anketa.name, anketa.age);
         }
 
         Console.WriteLine("Ваши любимые цвета:");
