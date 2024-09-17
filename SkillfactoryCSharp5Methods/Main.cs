@@ -3,6 +3,16 @@ using System.Xml.Linq;
 
 class MainClass
 {
+    static void ShowColors(string[] favcolors)
+    {
+        Console.WriteLine("Ваши любимые цвета:");
+        foreach (var color in favcolors)
+        {
+            Console.WriteLine(color);
+        }
+    }
+
+
     static string ShowColor(string who, int userage)
     {
         Console.WriteLine("{0}, {1} лет\nНапишите свой любимый цвет на английском с маленькой буквы", who, userage);
@@ -58,15 +68,9 @@ class MainClass
             favcolors[i] = ShowColor(anketa.name, anketa.age);
         }
 
-        Console.WriteLine("Ваши любимые цвета:");
-        foreach (var color in favcolors)
-        {
-            Console.WriteLine(color);
-        }
+        ShowColors(favcolors);
 
-
-
-            Console.ReadKey();
+        Console.ReadKey();
 
     }
 }
