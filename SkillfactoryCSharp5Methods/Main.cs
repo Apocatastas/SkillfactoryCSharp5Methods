@@ -1,57 +1,72 @@
 ﻿using System;
+using System.Xml.Linq;
 
 class MainClass
 {
-
-    static int[] BubbleSort(int[] arr)
+    static string ShowColor(string who)
     {
-        int buf = 0;
-        for (int i = 0; i < arr.Length; i++)
+        Console.WriteLine("{0}, напишите свой любимый цвет на английском с маленькой буквы", who);
+        var color = Console.ReadLine();
+
+        switch (color)
         {
-            for (int j = i + 1; j < arr.Length; j++)
-            {
-                if (arr[i] > arr[j])
-                    {
-                    buf = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = buf;
-                    }
-            }
+            case "red":
+                Console.BackgroundColor = ConsoleColor.Red;
+                Console.ForegroundColor = ConsoleColor.Black;
+
+                Console.WriteLine("Your color is red!");
+                break;
+
+            case "green":
+                Console.BackgroundColor = ConsoleColor.Green;
+                Console.ForegroundColor = ConsoleColor.Black;
+
+                Console.WriteLine("Your color is green!");
+                break;
+            case "cyan":
+                Console.BackgroundColor = ConsoleColor.Cyan;
+                Console.ForegroundColor = ConsoleColor.Black;
+
+                Console.WriteLine("Your color is cyan!");
+                break;
+            default:
+                Console.BackgroundColor = ConsoleColor.Yellow;
+                Console.ForegroundColor = ConsoleColor.Red;
+
+                Console.WriteLine("Your color is yellow!");
+                break;
         }
-
-        return arr;
-
-    }
-
-    static int[] GetArrayFromConsole()
-    {
-        var result = new int[5];
-
-        for (int i = 0; i < result.Length; i++)
-        {
-            Console.WriteLine("Введите элемент массива номер {0}", i + 1);
-            result[i] = int.Parse(Console.ReadLine());
-        }
-
-        return result;
+        return color;
     }
 
     public static void Main(string[] args)
     {
-        int[] arrForSort = new int[5];
-        arrForSort = GetArrayFromConsole();
-        BubbleSort(arrForSort);
+        (string name, int age) anketa;
 
-        foreach (var item in arrForSort)
+        Console.Write("Введите имя: ");
+        anketa.name = Console.ReadLine();
+        Console.Write("Введите возраст с цифрами: ");
+        anketa.age = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Ваше имя: {0}", anketa.name);
+        Console.WriteLine("Ваш возраст: {0}", anketa.age);
+
+        var favcolors = new string[3];
+
+        for (int i = 0; i < favcolors.Length; i++)
         {
-            Console.Write(item + " ");
+            favcolors[i] = ShowColor(anketa.name);
+        }
+
+        Console.WriteLine("Ваши любимые цвета:");
+        foreach (var color in favcolors)
+        {
+            Console.WriteLine(color);
         }
 
 
 
-        Console.ReadKey();
-        
-
+            Console.ReadKey();
 
     }
 }
