@@ -22,9 +22,9 @@ class MainClass
 
     }
 
-    static int[] GetArrayFromConsole()
+    static int[] GetArrayFromConsole(int len = 5)
     {
-        var result = new int[5];
+        var result = new int[len];
 
         for (int i = 0; i < result.Length; i++)
         {
