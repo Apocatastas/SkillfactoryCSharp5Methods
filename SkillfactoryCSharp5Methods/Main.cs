@@ -35,19 +35,27 @@ class MainClass
         return result;
     }
 
+    public static void ShowArray(int[] arr, bool isSorted = false)
+    {
+        if (isSorted)
+        {
+            foreach (var item in arr)
+            {
+                Console.Write(item + " ");
+            }
+        }
+        else
+        {
+            BubbleSort(arr);
+            ShowArray(arr, true);
+        }
+    }
+
     public static void Main(string[] args)
     {
         int[] arrForSort = new int[5];
         arrForSort = GetArrayFromConsole();
-        BubbleSort(arrForSort);
-
-        foreach (var item in arrForSort)
-        {
-            Console.Write(item + " ");
-        }
-
-
-
+        ShowArray(arrForSort);
         Console.ReadKey();
 
     }
