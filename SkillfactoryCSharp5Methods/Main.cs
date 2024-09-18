@@ -2,6 +2,7 @@
 
 class MainClass
 {
+    const int arrLen = 10;
     static int[] BubbleSort(int[] arr)
     {
         int buf = 0;
@@ -22,7 +23,7 @@ class MainClass
 
     }
 
-    static int[] GetArrayFromConsole(int len = 5)
+    static int[] GetArrayFromConsole(int len = arrLen)
     {
         var result = new int[len];
 
@@ -53,7 +54,7 @@ class MainClass
 
     public static void Main(string[] args)
     {
-        int[] arrForSort = new int[5];
+        int[] arrForSort = new int[arrLen];
         arrForSort = GetArrayFromConsole();
         ShowArray(arrForSort);
         Console.ReadKey();
