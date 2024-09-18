@@ -2,61 +2,34 @@
 
 class MainClass
 {
-    const int arrLen = 10;
-    static int[] BubbleSort(int[] arr)
+    static void GetName(string name)
     {
-        int buf = 0;
-        for (int i = 0; i < arr.Length; i++)
-        {
-            for (int j = i + 1; j < arr.Length; j++)
-            {
-                if (arr[i] > arr[j])
-                {
-                    buf = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = buf;
-                }
-            }
-        }
-
-        return arr;
+        Console.WriteLine("Введите имя");
+        name = Console.ReadLine();
 
     }
 
-    static int[] GetArrayFromConsole(int len = arrLen)
+    static void ChangeAge(ref int age)
     {
-        var result = new int[len];
+        age = 15;
 
-        for (int i = 0; i < result.Length; i++)
-        {
-            Console.WriteLine("Введите элемент массива номер {0}", i + 1);
-            result[i] = int.Parse(Console.ReadLine());
-        }
-
-        return result;
     }
 
-    public static void ShowArray(int[] arr, bool isSorted = false)
-    {
-        if (isSorted)
-        {
-            foreach (var item in arr)
-            {
-                Console.Write(item + " ");
-            }
-        }
-        else
-        {
-            BubbleSort(arr);
-            ShowArray(arr, true);
-        }
-    }
 
     public static void Main(string[] args)
     {
-        int[] arrForSort = new int[arrLen];
-        arrForSort = GetArrayFromConsole();
-        ShowArray(arrForSort);
+        string name = "Алла";
+        int age = 0;
+        /* 
+         Console.WriteLine(name);
+         GetName(name);
+         Console.WriteLine(name);
+        */
+
+        Console.WriteLine(age);
+        ChangeAge(ref age);
+        Console.WriteLine(age);
+
         Console.ReadKey();
 
     }
