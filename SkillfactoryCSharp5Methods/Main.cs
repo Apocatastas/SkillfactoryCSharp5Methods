@@ -20,6 +20,7 @@ class MainClass
     {
 
         var modif = phrase;
+        Console.BackgroundColor = (ConsoleColor)deep;
         Console.WriteLine("..." + modif);
 
 
