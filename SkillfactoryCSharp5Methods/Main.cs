@@ -4,11 +4,24 @@ class MainClass
 {
     const int arrLen = 3;
 
+    static int[] CopyArray(int[] arr)
+    {
+        int[] arrCopy = new int[arrLen];
+
+        for (int i = 0; i < arrLen; i++)
+        {
+            arrCopy[i] = arr[i];
+        }
+
+        return arrCopy;
+    }
+
 
     static void SortArray(in int[] arr, out int[] sortedAsc, out int[] sortedDesc)
     {
         sortedAsc = SortArrayAsc(arr);
-        sortedDesc = SortArrayDesc(arr);
+
+        sortedDesc = SortArrayDesc(CopyArray(arr));
 
     }
 
